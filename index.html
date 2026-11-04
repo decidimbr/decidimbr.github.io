@@ -112,6 +112,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 700; line-height: 1.06; m
 .lv-federal { --c: var(--blue); }
 .lv-state, .lv-municipal { --c: var(--green); }
 .lv-civil { --c: var(--yellow); }
+.lv-academic { --c: var(--ink); }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--muted); }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
 .legend i { width: 12px; height: 12px; border-radius: 3px; background: var(--c); }
@@ -245,6 +246,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 700; line-height: 1.06; m
       <div class="legend">
         <span class="lv-federal"><i></i><span data-i18n="lv_federal">Federal</span></span>
         <span class="lv-municipal"><i></i><span data-i18n="lv_municipal">Municipal</span></span>
+        <span class="lv-academic"><i></i><span data-i18n="lv_academic">Universidade</span></span>
         <span class="lv-civil"><i></i><span data-i18n="lv_civil">Sociedade civil</span></span>
       </div>
       <div class="grid" id="instances"></div>
@@ -334,7 +336,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 700; line-height: 1.06; m
       ch_5: 'Reunir as demandas de adaptação ao contexto brasileiro',
       ch_6: 'Promover encontros, hackathons e oficinas',
       in_k: 'Quem usa', in_h: 'Implantações e quem as mantém',
-      lv_federal: 'Federal', lv_municipal: 'Municipal', lv_civil: 'Sociedade civil',
+      lv_federal: 'Federal', lv_municipal: 'Municipal', lv_academic: 'Universidade', lv_civil: 'Sociedade civil',
       mo_k: 'O que foi construído', mo_h: 'Módulos livres para o Decidim 0.32',
       ar_k: 'Como', ar_h: 'Sem fork: o core fica intacto, o Brasil soma por cima',
       ar_l3b: 'Implantações', ar_l3s: 'Federal, municípios e sociedade civil escolhem os módulos de que precisam',
@@ -372,7 +374,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 700; line-height: 1.06; m
       ch_5: 'Gather the needs for adapting Decidim to Brazil',
       ch_6: 'Run meetups, hackathons and workshops',
       in_k: 'Who uses it', in_h: 'Deployments and who maintains them',
-      lv_federal: 'Federal', lv_municipal: 'Municipal', lv_civil: 'Civil society',
+      lv_federal: 'Federal', lv_municipal: 'Municipal', lv_academic: 'University', lv_civil: 'Civil society',
       mo_k: 'What has been built', mo_h: 'Free modules for Decidim 0.32',
       ar_k: 'How', ar_h: 'No forks: core stays intact, Brazil builds on top',
       ar_l3b: 'Deployments', ar_l3s: 'Federal, municipal and civil society pick the modules they need',
@@ -415,7 +417,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 700; line-height: 1.06; m
 
   function renderData() {
     const t = L();
-    const order = { federal: 0, state: 1, municipal: 2, civil: 3 };
+    const order = { federal: 0, state: 1, municipal: 2, academic: 3, civil: 4 };
     $('instances').innerHTML = [...state.instances].sort((a, b) => order[a.level] - order[b.level]).map((i) => `
       <article class="card lv-${esc(i.level)}">
         <span class="where">${esc(tr(i.place))}${i.since ? ` · ${esc(t.since)} ${esc(i.since)}` : ''}</span>

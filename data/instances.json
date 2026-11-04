@@ -3,7 +3,10 @@
     "id": "brasil-participativo",
     "name": "Brasil Participativo",
     "url": "https://brasilparticipativo.presidencia.gov.br",
-    "place": { "pt": "Governo federal", "en": "Federal government" },
+    "place": {
+      "pt": "Governo federal",
+      "en": "Federal government"
+    },
     "level": "federal",
     "status": "active",
     "since": 2023,
@@ -24,7 +27,10 @@
     "id": "participa",
     "name": "Participa",
     "url": "https://presidencia.participa.gov.br",
-    "place": { "pt": "Governo federal · serviço para municípios", "en": "Federal government · service for municipalities" },
+    "place": {
+      "pt": "Governo federal · serviço para municípios",
+      "en": "Federal government · service for municipalities"
+    },
     "level": "federal",
     "status": "active",
     "since": 2026,
@@ -35,14 +41,21 @@
     "maintainer": "LabLivre/Lappis-UnB · SG/PR",
     "decidim": "0.32.1",
     "repo": "https://gitlab.com/lappis-unb/decidimbr/participa",
-    "papers": ["bp-saas"],
-    "sources": ["https://gitlab.com/lappis-unb/decidimbr/participa"]
+    "papers": [
+      "bp-saas"
+    ],
+    "sources": [
+      "https://gitlab.com/lappis-unb/decidimbr/participa"
+    ]
   },
   {
     "id": "ta-selado",
     "name": "Tá Selado!",
     "url": "https://decide.belem.pa.gov.br",
-    "place": { "pt": "Belém · PA", "en": "Belém · PA" },
+    "place": {
+      "pt": "Belém · PA",
+      "en": "Belém · PA"
+    },
     "level": "municipal",
     "status": "unverified",
     "since": null,
@@ -63,7 +76,10 @@
     "id": "decide-contagem",
     "name": "Decide Contagem",
     "url": "https://decidim.contagem.mg.gov.br",
-    "place": { "pt": "Contagem · MG", "en": "Contagem · MG" },
+    "place": {
+      "pt": "Contagem · MG",
+      "en": "Contagem · MG"
+    },
     "level": "municipal",
     "status": "active",
     "since": 2022,
@@ -81,10 +97,37 @@
     ]
   },
   {
+    "id": "participa-ufpr",
+    "name": "Participa UFPR",
+    "url": "https://participa.ufpr.br",
+    "place": {
+      "pt": "Universidade Federal do Paraná · Curitiba",
+      "en": "Federal University of Paraná · Curitiba"
+    },
+    "level": "academic",
+    "status": "active",
+    "since": 2025,
+    "summary": {
+      "pt": "Participação da comunidade universitária nas decisões da UFPR: propostas, consultas, orçamento estudantil participativo e construção coletiva de regimentos e resoluções.",
+      "en": "University community participation in UFPR decisions: proposals, consultations, a participatory student budget and collaborative drafting of bylaws and resolutions."
+    },
+    "maintainer": "UFPR · AGTIC (Agência de Tecnologia da Informação e Comunicação)",
+    "decidim": null,
+    "repo": null,
+    "papers": [],
+    "sources": [
+      "https://ufpr.br/ufpr-lanca-plataforma-participativa/",
+      "https://participa.ufpr.br/pages/ajuda"
+    ]
+  },
+  {
     "id": "plantaformas",
     "name": "Plantaformas",
     "url": "https://plantaformas.org",
-    "place": { "pt": "Amazônia Legal", "en": "Legal Amazon" },
+    "place": {
+      "pt": "Amazônia Legal",
+      "en": "Legal Amazon"
+    },
     "level": "civil",
     "status": "active",
     "since": null,
@@ -105,7 +148,10 @@
     "id": "decide-amazonia",
     "name": "Decide Amazônia",
     "url": "https://decide.cosmo.tec.br",
-    "place": { "pt": "Amazônia", "en": "Amazon" },
+    "place": {
+      "pt": "Amazônia",
+      "en": "Amazon"
+    },
     "level": "civil",
     "status": "unverified",
     "since": null,
@@ -117,13 +163,18 @@
     "decidim": null,
     "repo": null,
     "papers": [],
-    "sources": ["https://colaborativas.net/sistematizacao-da-reuniao-de-planejamento-de-novembro-2022/"]
+    "sources": [
+      "https://colaborativas.net/sistematizacao-da-reuniao-de-planejamento-de-novembro-2022/"
+    ]
   },
   {
     "id": "cominutas",
     "name": "Cominutas",
     "url": "https://minutas.ok.org.br",
-    "place": { "pt": "Nacional", "en": "Nationwide" },
+    "place": {
+      "pt": "Nacional",
+      "en": "Nationwide"
+    },
     "level": "civil",
     "status": "active",
     "since": null,
@@ -135,6 +186,8 @@
     "decidim": null,
     "repo": "https://github.com/okfn-brasil",
     "papers": [],
-    "sources": ["https://minutas.ok.org.br/pages/decidim"]
+    "sources": [
+      "https://minutas.ok.org.br/pages/decidim"
+    ]
   }
 ]

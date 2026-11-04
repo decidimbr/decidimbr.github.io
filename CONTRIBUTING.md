@@ -49,7 +49,7 @@ Textos visíveis ao público têm versão em português e inglês: `{ "pt": "…
 | --- | --- | --- |
 | `id`, `name`, `url` | sim | Identificador, nome e endereço da plataforma |
 | `place` | sim | Território `{ pt, en }`, como `Belém · PA` |
-| `level` | sim | `federal`, `state`, `municipal` ou `civil` |
+| `level` | sim | `federal`, `state`, `municipal`, `academic` ou `civil` |
 | `status` | sim | `active` ou `unverified` |
 | `since` | não | Ano de lançamento |
 | `summary` | sim | Descrição curta `{ pt, en }` |
