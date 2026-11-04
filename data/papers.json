@@ -1,0 +1,32 @@
+[
+  {
+    "id": "bp-saas",
+    "title": "Brasil Participativo 2.0 as a Decidim SaaS: An Ecosystem of Fork-Free Modules",
+    "summary": {
+      "pt": "Apresenta a arquitetura do Brasil Participativo 2.0 como serviço compartilhado para municípios, baseado no Decidim, com módulos livres, login Gov.br e gestão descentralizada, sem modificar o código original.",
+      "en": "Presents the architecture of Brasil Participativo 2.0 as a shared Decidim-based service for municipalities, with free modules, gov.br login and decentralized management, without modifying the original code."
+    },
+    "pdf": "https://lablivre.unb.br/assets/pdfs/pesquisas/artigo-brasil-participativo-saas-rev.docx.pdf",
+    "source": "https://lablivre.unb.br/pesquisas/"
+  },
+  {
+    "id": "chatbot",
+    "title": "The State Machine Is the Policy: A Scripted Chatbot for Federal Consultations over WhatsApp",
+    "summary": {
+      "pt": "Descreve um chatbot de consultas públicas pelo WhatsApp, integrado ao Decidim, que permite votar com identificação segura. Fluxos roteirizados e auditáveis garantem consistência entre os votos na web e no chat.",
+      "en": "Describes a WhatsApp chatbot for public consultations, integrated with Decidim, that allows voting with secure identification. Scripted, auditable flows keep web and chat votes consistent."
+    },
+    "pdf": "https://lablivre.unb.br/assets/pdfs/pesquisas/artigo-chatbot-whatsapp-rev.docx.pdf",
+    "source": "https://lablivre.unb.br/pesquisas/"
+  },
+  {
+    "id": "participatory-texts",
+    "title": "Participatory Texts for Millions: A Paragraph-Centric Decidim Module Born from Production Outages",
+    "summary": {
+      "pt": "Apresenta um novo módulo de textos participativos do Decidim que permite comentar documentos extensos por parágrafo, com devolutivas do governo. A reformulação melhorou em 31 vezes o tempo de carregamento.",
+      "en": "Presents a new Decidim participatory texts module for commenting on long documents paragraph by paragraph, with government responses. The redesign made loading 31 times faster."
+    },
+    "pdf": "https://lablivre.unb.br/assets/pdfs/pesquisas/artigo-textos-participativos-v2-rev.docx.pdf",
+    "source": "https://lablivre.unb.br/pesquisas/"
+  }
+]

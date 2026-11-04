@@ -1,0 +1,140 @@
+[
+  {
+    "id": "brasil-participativo",
+    "name": "Brasil Participativo",
+    "url": "https://brasilparticipativo.presidencia.gov.br",
+    "place": { "pt": "Governo federal", "en": "Federal government" },
+    "level": "federal",
+    "status": "active",
+    "since": 2023,
+    "summary": {
+      "pt": "Plataforma federal de participação social da Secretaria-Geral da Presidência. Estreou com o PPA Participativo 2024–2027 e hoje recebe consultas, conferências e planos nacionais.",
+      "en": "The federal public participation platform of the Presidency's General Secretariat. It launched with the 2024–2027 Participatory Multi-Year Plan and now hosts national consultations, conferences and plans."
+    },
+    "maintainer": "SG/PR · LabLivre/Lappis-UnB · Dataprev",
+    "decidim": null,
+    "repo": null,
+    "papers": [],
+    "sources": [
+      "https://www.gov.br/secretariageral/pt-br/noticias/2025/novembro/brasil-participativo-integra-comite-internacional-de-democracia-digital",
+      "https://noticias.unb.br/117-pesquisa/6549-unb-desenvolve-plataforma-que-ajuda-populacao-a-indicar-prioridades-para-o-governo-federal"
+    ]
+  },
+  {
+    "id": "participa",
+    "name": "Participa",
+    "url": "https://presidencia.participa.gov.br",
+    "place": { "pt": "Governo federal · serviço para municípios", "en": "Federal government · service for municipalities" },
+    "level": "federal",
+    "status": "active",
+    "since": 2026,
+    "summary": {
+      "pt": "Brasil Participativo 2.0: uma instalação multi-tenant que oferece o Decidim como serviço a órgãos e municípios, com login gov.br e gestão descentralizada.",
+      "en": "Brasil Participativo 2.0: a multi-tenant installation offering Decidim as a service to agencies and municipalities, with gov.br login and decentralized management."
+    },
+    "maintainer": "LabLivre/Lappis-UnB · SG/PR",
+    "decidim": "0.32.1",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/participa",
+    "papers": ["bp-saas"],
+    "sources": ["https://gitlab.com/lappis-unb/decidimbr/participa"]
+  },
+  {
+    "id": "ta-selado",
+    "name": "Tá Selado!",
+    "url": "https://decide.belem.pa.gov.br",
+    "place": { "pt": "Belém · PA", "en": "Belém · PA" },
+    "level": "municipal",
+    "status": "unverified",
+    "since": null,
+    "summary": {
+      "pt": "Plataforma de participação permanente da Prefeitura de Belém. Primeira experiência de Decidim em governo no Brasil, que embasou a escolha do Decidim para o Brasil Participativo.",
+      "en": "Belém City Hall's permanent participation platform. Brazil's first government Decidim deployment, which informed the choice of Decidim for Brasil Participativo."
+    },
+    "maintainer": "Prefeitura de Belém · Cinbesa · Nômade Tecnologias",
+    "decidim": null,
+    "repo": null,
+    "papers": [],
+    "sources": [
+      "https://nomade.tec.br/en/",
+      "https://devopsdays.org/events/2023-belem/program/luiz-sanches"
+    ]
+  },
+  {
+    "id": "decide-contagem",
+    "name": "Decide Contagem",
+    "url": "https://decidim.contagem.mg.gov.br",
+    "place": { "pt": "Contagem · MG", "en": "Contagem · MG" },
+    "level": "municipal",
+    "status": "active",
+    "since": 2022,
+    "summary": {
+      "pt": "Plataforma do Sistema Municipal de Participação Popular e Cidadã, prevista em lei municipal. Recebe a consulta do PPA 2026–2029 do município.",
+      "en": "Platform for the city's Municipal Popular Participation System, established by municipal law. It hosts the city's 2026–2029 Multi-Year Plan consultation."
+    },
+    "maintainer": "Prefeitura de Contagem (SEGOV) · implantação com FGV-CDGP",
+    "decidim": null,
+    "repo": null,
+    "papers": [],
+    "sources": [
+      "https://portal.contagem.mg.gov.br/portal/noticias/0/3/70663/contagem-adota-plataforma-digital-que-vai-facilitar-o-debate-das-demandas-da-cidade",
+      "https://www.gov.br/secretariageral/pt-br/noticias/2023/novembro/contagem-mg-busca-parceria-com-o-governo-federal-para-aprimorar-plataforma-digital-do-municipio"
+    ]
+  },
+  {
+    "id": "plantaformas",
+    "name": "Plantaformas",
+    "url": "https://plantaformas.org",
+    "place": { "pt": "Amazônia Legal", "en": "Legal Amazon" },
+    "level": "civil",
+    "status": "active",
+    "since": null,
+    "summary": {
+      "pt": "Movimento de participação popular sobre clima, cultura digital e territórios amazônicos. Organiza conferências, encontros presenciais e propostas para políticas públicas.",
+      "en": "A grassroots participation movement on climate, digital culture and Amazonian territories. It runs conferences, in-person gatherings and public policy proposals."
+    },
+    "maintainer": "Cosmotécnicas Amazônicas · Nômade Tecnologias · apoio Hivos",
+    "decidim": null,
+    "repo": null,
+    "papers": [],
+    "sources": [
+      "https://plantaformas.org/",
+      "https://devopsdays.org/events/2023-belem/program/luiz-sanches"
+    ]
+  },
+  {
+    "id": "decide-amazonia",
+    "name": "Decide Amazônia",
+    "url": "https://decide.cosmo.tec.br",
+    "place": { "pt": "Amazônia", "en": "Amazon" },
+    "level": "civil",
+    "status": "unverified",
+    "since": null,
+    "summary": {
+      "pt": "Plataforma participativa de comunidades amazônicas, com assembleias, encontros e propostas.",
+      "en": "A participatory platform for Amazonian communities, with assemblies, meetings and proposals."
+    },
+    "maintainer": "Cosmotécnicas Amazônicas",
+    "decidim": null,
+    "repo": null,
+    "papers": [],
+    "sources": ["https://colaborativas.net/sistematizacao-da-reuniao-de-planejamento-de-novembro-2022/"]
+  },
+  {
+    "id": "cominutas",
+    "name": "Cominutas",
+    "url": "https://minutas.ok.org.br",
+    "place": { "pt": "Nacional", "en": "Nationwide" },
+    "level": "civil",
+    "status": "active",
+    "since": null,
+    "summary": {
+      "pt": "Espaço de encontros, debates e propostas colaborativas mantido pela Open Knowledge Brasil.",
+      "en": "A space for meetings, debates and collaborative proposals run by Open Knowledge Brasil."
+    },
+    "maintainer": "Open Knowledge Brasil",
+    "decidim": null,
+    "repo": "https://github.com/okfn-brasil",
+    "papers": [],
+    "sources": ["https://minutas.ok.org.br/pages/decidim"]
+  }
+]

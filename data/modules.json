@@ -1,0 +1,463 @@
+[
+  {
+    "id": "decidim-govbr",
+    "name": "decidim-govbr",
+    "category": "identity",
+    "tagline": {
+      "pt": "Login gov.br e identidade visual por organização",
+      "en": "gov.br login and per-organization branding"
+    },
+    "summary": {
+      "pt": "Engine de customizações brasileiras: autorização gov.br, identidade visual configurável por organização e blocos de conteúdo da página inicial.",
+      "en": "Engine with Brazilian customizations: gov.br authorization, per-organization visual identity and homepage content blocks."
+    },
+    "features": [
+      {
+        "pt": "Handler de autorização gov.br e views de verificação",
+        "en": "gov.br authorization handler and verification views"
+      },
+      {
+        "pt": "Blocos de home: notícias, eventos em destaque",
+        "en": "Homepage blocks: news, highlighted meetings"
+      },
+      {
+        "pt": "Extensões do admin: cores da organização, taxonomias, dashboard",
+        "en": "Admin extensions: organization colors, taxonomies, dashboard"
+      },
+      {
+        "pt": "Extensão da criação de organizações no System",
+        "en": "System organization-creation extension"
+      }
+    ],
+    "decidim": "= 0.32.1",
+    "version": "0.32.1",
+    "license": "AGPL-3.0-or-later",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/participa/-/tree/main/decidim-govbr",
+    "repo_label": "participa / decidim-govbr",
+    "branch": "main",
+    "tests": true,
+    "upstream": false,
+    "papers": [
+      "bp-saas"
+    ],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "omniauth-govbr",
+    "name": "omniauth-govbr",
+    "category": "identity",
+    "tagline": {
+      "pt": "Login único gov.br para qualquer app Rails",
+      "en": "gov.br single sign-on for any Rails app"
+    },
+    "summary": {
+      "pt": "Estratégia OmniAuth OAuth2 para o login único gov.br. Pode ser usada por qualquer aplicação Rails, não só pelo Decidim.",
+      "en": "OmniAuth OAuth2 strategy for gov.br single sign-on. Usable by any Rails app, not only Decidim."
+    },
+    "features": [],
+    "decidim": null,
+    "version": "0.1.0",
+    "license": "MIT",
+    "maintainer": "Paulo Tada (Lappis-UnB)",
+    "repo": "https://github.com/paulohtfs/omniauth-govbr",
+    "repo_label": "paulohtfs/omniauth-govbr",
+    "branch": "main",
+    "tests": false,
+    "upstream": false,
+    "papers": [
+      "bp-saas"
+    ],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "decidim-apartment",
+    "name": "decidim-apartment",
+    "category": "platform",
+    "tagline": {
+      "pt": "Uma instalação, muitas organizações",
+      "en": "One installation, many organizations"
+    },
+    "summary": {
+      "pt": "Multi-tenancy para o Decidim com ros-apartment: cada organização em um schema PostgreSQL próprio, base para operar o Decidim como serviço compartilhado.",
+      "en": "Multi-tenancy for Decidim with ros-apartment: each organization in its own PostgreSQL schema, the basis for running Decidim as a shared service."
+    },
+    "features": [
+      {
+        "pt": "Isolamento de tenants por schema",
+        "en": "Schema-per-tenant isolation"
+      },
+      {
+        "pt": "Configurações padrão para Decidim distribuído",
+        "en": "Default settings for distributed Decidim"
+      }
+    ],
+    "decidim": ">= 0.29",
+    "version": "0.1.0-rc",
+    "license": "AGPL-3.0",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/infra/participa-gem",
+    "repo_label": "infra / participa-gem",
+    "docs": "https://participa-gem-277819.gitlab.io",
+    "branch": "v0.1.0-rc",
+    "tests": true,
+    "upstream": false,
+    "papers": [
+      "bp-saas"
+    ],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "decidim-chatbot",
+    "name": "decidim-chatbot",
+    "category": "channel",
+    "tagline": {
+      "pt": "Consultas públicas pelo WhatsApp",
+      "en": "Public consultations over WhatsApp"
+    },
+    "summary": {
+      "pt": "Chatbot roteirizado que leva consultas públicas ao WhatsApp, com identificação segura do participante e votos consistentes entre web e chat.",
+      "en": "Scripted chatbot that brings public consultations to WhatsApp, with secure participant identification and votes kept consistent between web and chat."
+    },
+    "features": [
+      {
+        "pt": "Roteiros como máquina de estados auditável, publicados pelo admin",
+        "en": "Scripts as an auditable state machine, published by admins"
+      },
+      {
+        "pt": "Integração com broker de WhatsApp (Serpro): envio, webhook, status de entrega",
+        "en": "WhatsApp broker integration (Serpro): delivery, webhooks, delivery status"
+      },
+      {
+        "pt": "Vínculo do telefone com a conta do participante",
+        "en": "Links the phone number to the participant account"
+      },
+      {
+        "pt": "Simulador de terminal para testar roteiros",
+        "en": "Terminal simulator to test scripts"
+      }
+    ],
+    "decidim": "= 0.32.1",
+    "version": "0.32.1",
+    "license": "AGPL-3.0-or-later",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/participa/-/tree/main/decidim-chatbot",
+    "repo_label": "participa / decidim-chatbot",
+    "branch": "main",
+    "tests": true,
+    "upstream": false,
+    "papers": [
+      "chatbot"
+    ],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "decidim-participatory_texts",
+    "name": "decidim-participatory_texts",
+    "category": "component",
+    "tagline": {
+      "pt": "Comentários por parágrafo, 31× mais rápido",
+      "en": "Per-paragraph comments, 31× faster"
+    },
+    "summary": {
+      "pt": "Componente de textos participativos centrado no parágrafo: comentários por parágrafo em documentos extensos e devolutivas do governo. Reescrito com Hotwire, carrega 31 vezes mais rápido.",
+      "en": "Paragraph-centric participatory texts component: per-paragraph comments on long documents and government responses. Rebuilt with Hotwire, it loads 31 times faster."
+    },
+    "features": [
+      {
+        "pt": "Edição e manipulação por parágrafo",
+        "en": "Paragraph-level editing"
+      },
+      {
+        "pt": "Devolutivas oficiais por trecho",
+        "en": "Official responses per passage"
+      },
+      {
+        "pt": "API própria",
+        "en": "Own API"
+      }
+    ],
+    "decidim": ">= 0.32.0, < 0.33",
+    "version": "0.0.1",
+    "license": "AGPL-3.0-or-later",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/components-brasil-participativo/decidim-participatory_text",
+    "repo_label": "decidim-participatory_text",
+    "branch": "main",
+    "tests": true,
+    "upstream": false,
+    "papers": [
+      "participatory-texts"
+    ],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "decidim-bp_proposals",
+    "name": "decidim-bp_proposals",
+    "category": "extension",
+    "tagline": {
+      "pt": "Comentários de propostas por etapa",
+      "en": "Per-step comments on proposals"
+    },
+    "summary": {
+      "pt": "Ajustes ao componente de propostas aplicados por prepend, sem fork do core.",
+      "en": "Tweaks to the proposals component, applied via prepend without forking core."
+    },
+    "features": [
+      {
+        "pt": "Comentários controlados por etapa, em propostas e rascunhos colaborativos",
+        "en": "Per-step comment control on proposals and collaborative drafts"
+      }
+    ],
+    "decidim": "~> 0.32.1",
+    "version": "0.0.1",
+    "license": "AGPL-3.0-or-later",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/components-brasil-participativo/decidim-bp_proposals",
+    "repo_label": "decidim-bp_proposals",
+    "branch": "main",
+    "tests": true,
+    "upstream": false,
+    "papers": [
+      "bp-saas"
+    ],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "decidim-bp_meetings",
+    "name": "decidim-bp_meetings",
+    "category": "extension",
+    "tagline": {
+      "pt": "Criação, comentários e anexos por etapa",
+      "en": "Per-step creation, comments and attachments"
+    },
+    "summary": {
+      "pt": "Ajustes ao componente de encontros. Cada funcionalidade fica em um arquivo próprio, com a origem do requisito e se é candidata a upstream.",
+      "en": "Tweaks to the meetings component. Each feature lives in its own file, stating where the requirement came from and whether it is an upstream candidate."
+    },
+    "features": [
+      {
+        "pt": "Criação de eventos por participantes controlada por etapa",
+        "en": "Per-step control of participant-created meetings"
+      },
+      {
+        "pt": "Comentários controlados por etapa",
+        "en": "Per-step comment control"
+      },
+      {
+        "pt": "Anexos por etapa, com upload pelo cidadão",
+        "en": "Per-step attachments, including citizen uploads"
+      }
+    ],
+    "decidim": "~> 0.32.1",
+    "version": "0.0.1",
+    "license": "AGPL-3.0-or-later",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/components-brasil-participativo/decidim-bp_meetings",
+    "repo_label": "decidim-bp_meetings",
+    "branch": "main",
+    "tests": true,
+    "upstream": true,
+    "papers": [
+      "bp-saas"
+    ],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "decidim-bp_comments",
+    "name": "decidim-bp_comments",
+    "category": "extension",
+    "tagline": {
+      "pt": "Respostas oficiais e moderação",
+      "en": "Official responses and moderation"
+    },
+    "summary": {
+      "pt": "Regras de comentários para consultas governamentais: respostas oficiais, janela de edição e moderação.",
+      "en": "Comment rules for government consultations: official responses, edit window and moderation."
+    },
+    "features": [
+      {
+        "pt": "Só perfis administrativos respondem, com etiqueta \"Resposta Oficial\"",
+        "en": "Only admin profiles reply, tagged \"Official Response\""
+      },
+      {
+        "pt": "Edição e exclusão pelo autor só nos primeiros 5 minutos",
+        "en": "Authors can edit or delete only within 5 minutes"
+      },
+      {
+        "pt": "Denúncia restrita a admins e moderadores",
+        "en": "Reporting restricted to admins and moderators"
+      }
+    ],
+    "decidim": "~> 0.32.1",
+    "version": "0.0.1",
+    "license": "AGPL-3.0-or-later",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/components-brasil-participativo/decidim-bp_comments",
+    "repo_label": "decidim-bp_comments",
+    "branch": "main",
+    "tests": true,
+    "upstream": false,
+    "papers": [
+      "bp-saas"
+    ],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "decidim-questionnaires",
+    "name": "decidim-questionnaires",
+    "category": "extension",
+    "tagline": {
+      "pt": "Extensões dos formulários",
+      "en": "Forms extensions"
+    },
+    "summary": {
+      "pt": "Overrides e extensões do motor de formulários (decidim-forms), usado por pesquisas, encontros e outros componentes.",
+      "en": "Overrides and extensions for the forms engine (decidim-forms), used by surveys, meetings and other components."
+    },
+    "features": [],
+    "decidim": "~> 0.32.1",
+    "version": "0.0.1",
+    "license": "AGPL-3.0-or-later",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/components-brasil-participativo/decidim-module-questionnaires",
+    "repo_label": "decidim-module-questionnaires",
+    "branch": "main",
+    "tests": true,
+    "upstream": false,
+    "papers": [],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "decidim-extra_home_blocks",
+    "name": "decidim-extra_home_blocks",
+    "category": "extension",
+    "tagline": {
+      "pt": "Blocos de home melhores, sem substituir o core",
+      "en": "Better homepage blocks without replacing core"
+    },
+    "summary": {
+      "pt": "Melhorias opt-in nos blocos de conteúdo das páginas iniciais. Estende os blocos do core em vez de substituí-los, com padrão no comportamento original.",
+      "en": "Opt-in improvements to homepage content blocks. Extends core blocks instead of replacing them, defaulting to the original behavior."
+    },
+    "features": [
+      {
+        "pt": "Linha do tempo de etapas expandida na home do processo",
+        "en": "Expanded step timeline on the process homepage"
+      },
+      {
+        "pt": "Bloco de destaque usa a imagem do espaço participativo",
+        "en": "Hero block uses the participatory space image"
+      },
+      {
+        "pt": "Títulos configuráveis em blocos como estatísticas",
+        "en": "Configurable titles on blocks such as statistics"
+      }
+    ],
+    "decidim": "~> 0.32.1",
+    "version": "0.1.0",
+    "license": "AGPL-3.0-or-later",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/components-brasil-participativo/decidim-extra_home_blocks",
+    "repo_label": "decidim-extra_home_blocks",
+    "branch": "main",
+    "tests": false,
+    "upstream": true,
+    "papers": [],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "decidim-categories",
+    "name": "decidim-categories",
+    "category": "admin",
+    "tagline": {
+      "pt": "Categorias hierárquicas obrigatórias",
+      "en": "Required hierarchical categories"
+    },
+    "summary": {
+      "pt": "Categorias hierárquicas por espaço participativo, obrigatórias em propostas e encontros.",
+      "en": "Hierarchical categories per participatory space, required on proposals and meetings."
+    },
+    "features": [
+      {
+        "pt": "Subcategorias ilimitadas, com exclusão lógica",
+        "en": "Unlimited subcategories with soft delete"
+      },
+      {
+        "pt": "Seleção só de nível folha, exclusiva dentro do mesmo grupo",
+        "en": "Leaf-only selection, mutually exclusive within a group"
+      }
+    ],
+    "decidim": "= 0.32.1",
+    "version": "0.32.1",
+    "license": "AGPL-3.0-or-later",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/components-brasil-participativo/decidim-categories",
+    "repo_label": "decidim-categories",
+    "branch": "main",
+    "tests": true,
+    "upstream": false,
+    "papers": [],
+    "used_by": [
+      "participa"
+    ]
+  },
+  {
+    "id": "decidim-government_spaces",
+    "name": "decidim-government_spaces",
+    "category": "admin",
+    "tagline": {
+      "pt": "Admin por órgão e setor",
+      "en": "Admin by agency and sector"
+    },
+    "summary": {
+      "pt": "Administração descentralizada por hierarquia de governo (Órgão e Setor). Admins com escopo gerenciam só os seus processos, sem poder de admin geral.",
+      "en": "Decentralized administration along the government hierarchy (Agency and Sector). Scoped admins manage only their own processes, without full admin rights."
+    },
+    "features": [
+      {
+        "pt": "Acesso calculado das filiações; revogar a filiação revoga o acesso",
+        "en": "Access computed from memberships; revoking a membership revokes access"
+      },
+      {
+        "pt": "Admins com escopo podem tudo, exceto excluir",
+        "en": "Scoped admins can do everything except delete"
+      }
+    ],
+    "decidim": "= 0.32.1",
+    "version": "0.32.1",
+    "license": "AGPL-3.0-or-later",
+    "maintainer": "Lappis-UnB",
+    "repo": "https://gitlab.com/lappis-unb/decidimbr/components-brasil-participativo/decidim-government-spaces",
+    "repo_label": "decidim-government-spaces",
+    "branch": "main",
+    "tests": true,
+    "upstream": false,
+    "papers": [
+      "bp-saas"
+    ],
+    "used_by": [
+      "participa"
+    ]
+  }
+]

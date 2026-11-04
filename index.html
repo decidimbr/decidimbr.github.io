@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Decidim Brasil</title>
+<meta name="description" content="O ecossistema brasileiro do Decidim: implantações, módulos e pesquisa. Ponto de partida do Capítulo Brasil.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='60 60 290 250'%3E%3Cpath d='M128 125h11a8 8 0 0 1 8 8v159a8 8 0 0 1-8 8h-11a62 62 0 0 1-62-62v-51a62 62 0 0 1 62-62z' fill='%234a8f2f'/%3E%3Crect x='160' y='70' width='80' height='230' rx='8' fill='%23f8c933'/%3E%3Ccircle cx='304' cy='262' r='41' fill='%231f5bff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: deck vertical — cada seção é um slide de tela cheia com scroll-snap; barra fixa com logo e idioma, contador e setas no canto */
+:root {
+  --paper: #f4f4f2;
+  --surface: #ffffff;
+  --ink: #121a14;
+  --muted: #5a645d;
+  --line: #dcdfd9;
+  --green: #4a8f2f;
+  --yellow: #f8c933;
+  --blue: #1f5bff;
+  --on-yellow: #121a14;
+  --font-display: "Sora", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f1210; --surface: #171c18; --ink: #eef1ec; --muted: #a2aca4; --line: #2b322d;
+    --green: #74c152; --yellow: #f8c933; --blue: #6b93ff;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-snap-type: y proximity; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 18px; line-height: 1.5; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
+[hidden] { display: none !important; }
+
+/* barra fixa */
+.bar {
+  position: fixed; inset: 0 0 auto; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding-top: max(12px, env(safe-area-inset-top, 0px)); padding-bottom: 12px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(8px);
+}
+.mark { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 16px; }
+.mark svg { width: 30px; height: 26px; }
+.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); }
+.lang button { font: inherit; font-size: 13px; font-weight: 600; padding: 4px 12px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+/* slides */
+.slide {
+  min-height: 100vh; min-height: 100svh; scroll-snap-align: start;
+  display: flex; flex-direction: column; justify-content: center;
+  padding-block: 88px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.inner { width: 100%; max-width: 1120px; margin: 0 auto; display: grid; gap: 28px; }
+.kicker { font-family: var(--font-mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+.kicker::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--blue); }
+h1, h2 { font-family: var(--font-display); margin: 0; text-wrap: balance; letter-spacing: -.02em; }
+h2 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 700; line-height: 1.06; max-width: 22ch; }
+.lead { margin: 0; font-size: clamp(18px, 2vw, 22px); color: var(--muted); max-width: 58ch; }
+
+/* capa */
+.cover .inner { gap: 32px; }
+.cover-logo { width: clamp(120px, 18vw, 190px); height: auto; }
+.cover h1 { font-size: clamp(44px, 9vw, 112px); font-weight: 800; line-height: .95; }
+.cover h1 span { display: block; color: var(--green); }
+.cover .lead { font-size: clamp(19px, 2.4vw, 26px); color: var(--ink); max-width: 36ch; }
+.cover .meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { font-size: 14px; font-weight: 600; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
+.hint { font-size: 14px; color: var(--muted); }
+
+/* números */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.stat { display: grid; gap: 4px; padding-top: 14px; border-top: 6px solid var(--c, var(--green)); }
+.stat b { font-family: var(--font-display); font-weight: 800; font-size: clamp(48px, 7vw, 84px); line-height: 1; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 16px; }
+
+/* capítulo */
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.roles { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.roles li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; align-items: start; font-size: 18px; }
+.roles li::before { content: ""; width: 14px; height: 14px; margin-top: 6px; border-radius: 50%; background: var(--green); }
+.roles li:nth-child(3n+2)::before { background: var(--yellow); border-radius: 3px; }
+.roles li:nth-child(3n)::before { background: var(--blue); }
+.refs { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; }
+.refs a { color: var(--blue); font-weight: 600; text-underline-offset: 3px; }
+
+/* grades de cartões */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.card {
+  min-width: 0; display: grid; gap: 6px; align-content: start;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 16px 14px;
+  border-top: 5px solid var(--c, var(--line));
+}
+.card h3 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 18px; line-height: 1.2; overflow-wrap: anywhere; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.card .where { font-size: 14px; font-weight: 600; color: var(--muted); }
+.card p { margin: 0; font-size: 15.5px; line-height: 1.45; }
+.card .who { font-size: 13.5px; color: var(--muted); }
+.card .flag { font-size: 12px; font-weight: 600; color: var(--muted); }
+.lv-federal { --c: var(--blue); }
+.lv-state, .lv-municipal { --c: var(--green); }
+.lv-civil { --c: var(--yellow); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; background: var(--c); }
+
+.mods { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.mods .card { border-top-width: 1px; }
+.mods .cat { font-family: var(--font-mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.mods .cat::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.mods h3 { font-family: var(--font-mono); font-weight: 500; font-size: 14.5px; }
+
+/* arquitetura */
+.stack { display: grid; gap: 10px; }
+.layer { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 16px; align-items: center; padding: 18px 20px; border-radius: 10px; }
+.layer b { font-family: var(--font-display); font-size: 20px; }
+.layer span { font-size: 16px; }
+.layer.l1 { background: var(--yellow); color: var(--on-yellow); }
+.layer.l2 { background: var(--green); color: #fff; }
+.layer.l3 { background: var(--blue); color: #fff; }
+.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.principles div { display: grid; gap: 4px; }
+.principles b { font-family: var(--font-display); font-size: 18px; }
+.principles span { color: var(--muted); font-size: 16px; }
+
+/* pesquisa */
+.papers { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.paper { display: grid; gap: 10px; align-content: space-between; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+.paper h3 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 19px; line-height: 1.25; }
+.paper p { margin: 0; font-size: 15.5px; color: var(--muted); }
+.paper a { color: var(--blue); font-weight: 600; font-size: 15px; }
+
+/* chamada */
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 17px; padding: 12px 20px; border-radius: 999px; border: 2px solid var(--ink); }
+.btn.primary { background: var(--ink); color: var(--paper); }
+.criteria { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px 24px; }
+.criteria li { display: grid; gap: 2px; padding-left: 14px; border-left: 4px solid var(--green); }
+.criteria b { font-family: var(--font-display); font-weight: 600; font-size: 16.5px; }
+.criteria span { font-size: 15px; color: var(--muted); }
+.foot { font-size: 13.5px; color: var(--muted); }
+
+/* navegação */
+.nav {
+  position: fixed; z-index: 20; display: flex; align-items: center; gap: 8px;
+  right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px));
+}
+.nav button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 18px; cursor: pointer; display: grid; place-items: center; }
+.nav button:disabled { opacity: .35; cursor: default; }
+.counter { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding: 0 6px; background: var(--paper); border-radius: 6px; }
+.notice { padding: 18px; border: 1px dashed var(--line); border-radius: 10px; color: var(--muted); }
+
+@media (max-width: 780px) {
+  .two { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .layer { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .slide { justify-content: flex-start; }
+  .cover { justify-content: center; }
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="mark" href="#capa" aria-label="Decidim Brasil">
+    <svg viewBox="60 60 290 250" aria-hidden="true"><path d="M128 125h11a8 8 0 0 1 8 8v159a8 8 0 0 1-8 8h-11a62 62 0 0 1-62-62v-51a62 62 0 0 1 62-62z" fill="var(--green)"/><rect x="160" y="70" width="80" height="230" rx="8" fill="var(--yellow)"/><circle cx="304" cy="262" r="41" fill="var(--blue)"/></svg>
+    <span>Decidim Brasil</span>
+  </a>
+  <div class="lang" role="group" aria-label="Idioma / Language">
+    <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<main>
+  <!-- 1 · capa -->
+  <section class="slide cover" id="capa">
+    <div class="inner">
+      <svg class="cover-logo" viewBox="60 60 290 250" role="img" aria-label="Decidim Brasil"><path d="M128 125h11a8 8 0 0 1 8 8v159a8 8 0 0 1-8 8h-11a62 62 0 0 1-62-62v-51a62 62 0 0 1 62-62z" fill="var(--green)"/><rect x="160" y="70" width="80" height="230" rx="8" fill="var(--yellow)"/><circle cx="304" cy="262" r="41" fill="var(--blue)"/></svg>
+      <h1>Decidim <span>Brasil</span></h1>
+      <p class="lead" data-i18n="cover_lead">O ecossistema brasileiro do Decidim em um só lugar: quem usa, quem mantém e o que já foi construído.</p>
+      <div class="meta">
+        <span class="pill" data-i18n="cover_p1">Capítulo Brasil · em formação</span>
+        <span class="pill">Decidim 0.32</span>
+      </div>
+      <p class="hint" data-i18n="cover_hint">Role ou use as setas do teclado ↓</p>
+    </div>
+  </section>
+
+  <!-- 2 · contexto -->
+  <section class="slide" id="contexto">
+    <div class="inner">
+      <div class="kicker" data-i18n="ctx_k">O cenário</div>
+      <h2 data-i18n="ctx_h">O Brasil já roda Decidim do governo federal aos movimentos sociais. Faltava um mapa.</h2>
+      <div class="stats">
+        <div class="stat" style="--c: var(--green)"><b id="n-inst">–</b><span data-i18n="ctx_s1">implantações mapeadas</span></div>
+        <div class="stat" style="--c: var(--yellow)"><b id="n-mod">–</b><span data-i18n="ctx_s2">módulos livres para a 0.32</span></div>
+        <div class="stat" style="--c: var(--blue)"><b id="n-pap">–</b><span data-i18n="ctx_s3">artigos de pesquisa</span></div>
+        <div class="stat" style="--c: var(--green)"><b>2016</b><span data-i18n="ctx_s4">ano de criação do Decidim, em Barcelona</span></div>
+      </div>
+      <p class="lead" data-i18n="ctx_lead">Prefeituras, órgãos federais, universidades e coletivos resolvem problemas parecidos, cada um no seu canto. Um diretório comum evita retrabalho e mostra ao mundo o que o Brasil já faz.</p>
+    </div>
+  </section>
+
+  <!-- 3 · capítulo -->
+  <section class="slide" id="capitulo">
+    <div class="inner">
+      <div class="kicker" data-i18n="ch_k">O modelo</div>
+      <div class="two">
+        <div style="display:grid;gap:20px">
+          <h2 data-i18n="ch_h">Um capítulo local, como o da Suíça</h2>
+          <p class="lead" data-i18n="ch_lead">Em junho de 2026, a Suíça criou em Berna o primeiro capítulo local da Associação Decidim, reunindo cidades, cantões, fornecedores e pesquisadores. O Brasil pode ser o próximo.</p>
+          <div class="refs">
+            <a href="https://decidim.org/blog/2026-06-23-the-decidim-swiss-local-chapter-is-born" data-i18n="ch_r1">Nasce o capítulo suíço</a>
+            <a href="https://meta.decidim.org/assemblies/coordination-committee/f/1799/proposals/17860" data-i18n="ch_r2">Proposta no Metadecidim</a>
+          </div>
+        </div>
+        <ul class="roles">
+          <li data-i18n="ch_1">Coordenar o cofinanciamento de módulos entre governos e sociedade civil</li>
+          <li data-i18n="ch_2">Trazer organizações brasileiras para a Associação Decidim</li>
+          <li data-i18n="ch_3">Formar e apoiar quem administra plataformas</li>
+          <li data-i18n="ch_4">Cuidar das traduções para pt-BR e da documentação</li>
+          <li data-i18n="ch_5">Reunir as demandas de adaptação ao contexto brasileiro</li>
+          <li data-i18n="ch_6">Promover encontros, hackathons e oficinas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · implantações -->
+  <section class="slide" id="implantacoes">
+    <div class="inner">
+      <div class="kicker" data-i18n="in_k">Quem usa</div>
+      <h2 data-i18n="in_h">Implantações e quem as mantém</h2>
+      <div class="legend">
+        <span class="lv-federal"><i></i><span data-i18n="lv_federal">Federal</span></span>
+        <span class="lv-municipal"><i></i><span data-i18n="lv_municipal">Municipal</span></span>
+        <span class="lv-civil"><i></i><span data-i18n="lv_civil">Sociedade civil</span></span>
+      </div>
+      <div class="grid" id="instances"></div>
+    </div>
+  </section>
+
+  <!-- 5 · módulos -->
+  <section class="slide" id="modulos">
+    <div class="inner">
+      <div class="kicker" data-i18n="mo_k">O que foi construído</div>
+      <h2 data-i18n="mo_h">Módulos livres para o Decidim 0.32</h2>
+      <div class="grid mods" id="modules"></div>
+    </div>
+  </section>
+
+  <!-- 6 · arquitetura -->
+  <section class="slide" id="arquitetura">
+    <div class="inner">
+      <div class="kicker" data-i18n="ar_k">Como</div>
+      <h2 data-i18n="ar_h">Sem fork: o core fica intacto, o Brasil soma por cima</h2>
+      <div class="stack">
+        <div class="layer l3"><b data-i18n="ar_l3b">Implantações</b><span data-i18n="ar_l3s">Federal, municípios e sociedade civil escolhem os módulos de que precisam</span></div>
+        <div class="layer l2"><b data-i18n="ar_l2b">Módulos brasileiros</b><span data-i18n="ar_l2s">Engines e extensões via prepend, to_prepare e content blocks</span></div>
+        <div class="layer l1"><b data-i18n="ar_l1b">Decidim core</b><span data-i18n="ar_l1s">0.32.x, mantido pela Associação Decidim, sem alterações</span></div>
+      </div>
+      <div class="principles">
+        <div><b data-i18n="ar_p1b">Atualizar sem dor</b><span data-i18n="ar_p1s">Seguir as versões do Decidim sem reaplicar patches.</span></div>
+        <div><b data-i18n="ar_p2b">Reutilizar</b><span data-i18n="ar_p2s">Cada módulo serve a qualquer instância, não só à que o criou.</span></div>
+        <div><b data-i18n="ar_p3b">Devolver ao upstream</b><span data-i18n="ar_p3s">Funcionalidades gerais são marcadas como candidatas ao core.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · pesquisa -->
+  <section class="slide" id="pesquisa">
+    <div class="inner">
+      <div class="kicker" data-i18n="pa_k">Evidência</div>
+      <h2 data-i18n="pa_h">Pesquisa aplicada, publicada</h2>
+      <div class="papers" id="papers"></div>
+      <div class="refs"><a href="https://lablivre.unb.br/pesquisas/" data-i18n="pa_more">Todas as pesquisas do LabLivre (UnB)</a></div>
+    </div>
+  </section>
+
+  <!-- 8 · participe -->
+  <section class="slide" id="participe">
+    <div class="inner">
+      <div class="kicker" data-i18n="cta_k">Próximo passo</div>
+      <h2 data-i18n="cta_h">Coloque sua implantação ou módulo no mapa</h2>
+      <ul class="criteria">
+        <li><b data-i18n="c1_b">Software livre</b><span data-i18n="c1_s">Licença compatível com a AGPL-3.0, repositório público</span></li>
+        <li><b data-i18n="c2_b">Versão declarada</b><span data-i18n="c2_s">Faixa de versões do Decidim testada</span></li>
+        <li><b data-i18n="c3_b">Sem fork do core</b><span data-i18n="c3_s">Engines, prepend ou content blocks</span></li>
+        <li><b data-i18n="c4_b">Documentado e testado</b><span data-i18n="c4_s">README, testes em CI e textos em pt-BR</span></li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn primary" href="https://github.com/decidimbr" data-i18n="cta_b1">Contribuir no GitHub</a>
+        <a class="btn" href="https://t.me/DecidimBR" data-i18n="cta_b2">Comunidade no Telegram</a>
+        <a class="btn" href="https://meta.decidim.org.br" data-i18n="cta_b3">Meta Decidim BR</a>
+      </div>
+      <p class="foot" data-i18n="foot">Conteúdo sob CC BY-SA 4.0. Decidim é marca registrada da Associació de Software Lliure Decidim.</p>
+    </div>
+  </section>
+</main>
+
+<nav class="nav" aria-label="Slides">
+  <button type="button" id="prev" aria-label="Slide anterior">↑</button>
+  <span class="counter" id="counter">01 / 08</span>
+  <button type="button" id="next" aria-label="Próximo slide">↓</button>
+</nav>
+
+<script>
+(() => {
+  const UI = {
+    pt: {
+      cover_lead: 'O ecossistema brasileiro do Decidim em um só lugar: quem usa, quem mantém e o que já foi construído.',
+      cover_p1: 'Capítulo Brasil · em formação', cover_hint: 'Role ou use as setas do teclado ↓',
+      ctx_k: 'O cenário', ctx_h: 'O Brasil já roda Decidim do governo federal aos movimentos sociais. Faltava um mapa.',
+      ctx_s1: 'implantações mapeadas', ctx_s2: 'módulos livres para a 0.32', ctx_s3: 'artigos de pesquisa', ctx_s4: 'ano de criação do Decidim, em Barcelona',
+      ctx_lead: 'Prefeituras, órgãos federais, universidades e coletivos resolvem problemas parecidos, cada um no seu canto. Um diretório comum evita retrabalho e mostra ao mundo o que o Brasil já faz.',
+      ch_k: 'O modelo', ch_h: 'Um capítulo local, como o da Suíça',
+      ch_lead: 'Em junho de 2026, a Suíça criou em Berna o primeiro capítulo local da Associação Decidim, reunindo cidades, cantões, fornecedores e pesquisadores. O Brasil pode ser o próximo.',
+      ch_r1: 'Nasce o capítulo suíço', ch_r2: 'Proposta no Metadecidim',
+      ch_1: 'Coordenar o cofinanciamento de módulos entre governos e sociedade civil',
+      ch_2: 'Trazer organizações brasileiras para a Associação Decidim',
+      ch_3: 'Formar e apoiar quem administra plataformas',
+      ch_4: 'Cuidar das traduções para pt-BR e da documentação',
+      ch_5: 'Reunir as demandas de adaptação ao contexto brasileiro',
+      ch_6: 'Promover encontros, hackathons e oficinas',
+      in_k: 'Quem usa', in_h: 'Implantações e quem as mantém',
+      lv_federal: 'Federal', lv_municipal: 'Municipal', lv_civil: 'Sociedade civil',
+      mo_k: 'O que foi construído', mo_h: 'Módulos livres para o Decidim 0.32',
+      ar_k: 'Como', ar_h: 'Sem fork: o core fica intacto, o Brasil soma por cima',
+      ar_l3b: 'Implantações', ar_l3s: 'Federal, municípios e sociedade civil escolhem os módulos de que precisam',
+      ar_l2b: 'Módulos brasileiros', ar_l2s: 'Engines e extensões via prepend, to_prepare e content blocks',
+      ar_l1b: 'Decidim core', ar_l1s: '0.32.x, mantido pela Associação Decidim, sem alterações',
+      ar_p1b: 'Atualizar sem dor', ar_p1s: 'Seguir as versões do Decidim sem reaplicar patches.',
+      ar_p2b: 'Reutilizar', ar_p2s: 'Cada módulo serve a qualquer instância, não só à que o criou.',
+      ar_p3b: 'Devolver ao upstream', ar_p3s: 'Funcionalidades gerais são marcadas como candidatas ao core.',
+      pa_k: 'Evidência', pa_h: 'Pesquisa aplicada, publicada', pa_more: 'Todas as pesquisas do LabLivre (UnB)',
+      cta_k: 'Próximo passo', cta_h: 'Coloque sua implantação ou módulo no mapa',
+      c1_b: 'Software livre', c1_s: 'Licença compatível com a AGPL-3.0, repositório público',
+      c2_b: 'Versão declarada', c2_s: 'Faixa de versões do Decidim testada',
+      c3_b: 'Sem fork do core', c3_s: 'Engines, prepend ou content blocks',
+      c4_b: 'Documentado e testado', c4_s: 'README, testes em CI e textos em pt-BR',
+      cta_b1: 'Contribuir no GitHub', cta_b2: 'Comunidade no Telegram', cta_b3: 'Meta Decidim BR',
+      foot: 'Conteúdo sob CC BY-SA 4.0. Decidim é marca registrada da Associació de Software Lliure Decidim.',
+      cat: { component: 'Componente', extension: 'Extensão', channel: 'Canal', admin: 'Administração', identity: 'Identidade', platform: 'Infraestrutura' },
+      unverified: 'Situação não verificada', since: 'desde', read_pdf: 'Ler PDF',
+      prev: 'Slide anterior', next: 'Próximo slide',
+      load_err: 'Não foi possível carregar os dados. Se abriu o arquivo direto do disco, sirva a pasta por HTTP (python3 -m http.server).'
+    },
+    en: {
+      cover_lead: 'Brazil’s Decidim ecosystem in one place: who uses it, who maintains it and what has been built.',
+      cover_p1: 'Brazil Chapter · forming', cover_hint: 'Scroll or use the arrow keys ↓',
+      ctx_k: 'The landscape', ctx_h: 'Brazil already runs Decidim from the federal government to grassroots movements. It lacked a map.',
+      ctx_s1: 'deployments mapped', ctx_s2: 'free modules for 0.32', ctx_s3: 'research papers', ctx_s4: 'year Decidim was created, in Barcelona',
+      ctx_lead: 'City halls, federal agencies, universities and collectives solve similar problems on their own. A shared directory avoids duplicated work and shows the world what Brazil already does.',
+      ch_k: 'The model', ch_h: 'A local chapter, like Switzerland’s',
+      ch_lead: 'In June 2026, Switzerland founded the Decidim Association’s first local chapter in Bern, bringing together cities, cantons, providers and researchers. Brazil can be next.',
+      ch_r1: 'The Swiss chapter is born', ch_r2: 'Proposal on Metadecidim',
+      ch_1: 'Coordinate co-funding of modules across governments and civil society',
+      ch_2: 'Bring Brazilian organizations into the Decidim Association',
+      ch_3: 'Train and support platform administrators',
+      ch_4: 'Look after pt-BR translations and documentation',
+      ch_5: 'Gather the needs for adapting Decidim to Brazil',
+      ch_6: 'Run meetups, hackathons and workshops',
+      in_k: 'Who uses it', in_h: 'Deployments and who maintains them',
+      lv_federal: 'Federal', lv_municipal: 'Municipal', lv_civil: 'Civil society',
+      mo_k: 'What has been built', mo_h: 'Free modules for Decidim 0.32',
+      ar_k: 'How', ar_h: 'No forks: core stays intact, Brazil builds on top',
+      ar_l3b: 'Deployments', ar_l3s: 'Federal, municipal and civil society pick the modules they need',
+      ar_l2b: 'Brazilian modules', ar_l2s: 'Engines and extensions via prepend, to_prepare and content blocks',
+      ar_l1b: 'Decidim core', ar_l1s: '0.32.x, maintained by the Decidim Association, unmodified',
+      ar_p1b: 'Painless upgrades', ar_p1s: 'Follow Decidim releases without reapplying patches.',
+      ar_p2b: 'Reuse', ar_p2s: 'Every module works for any instance, not only the one that built it.',
+      ar_p3b: 'Give back upstream', ar_p3s: 'General features are flagged as core candidates.',
+      pa_k: 'Evidence', pa_h: 'Applied research, published', pa_more: 'All LabLivre research (UnB)',
+      cta_k: 'Next step', cta_h: 'Put your deployment or module on the map',
+      c1_b: 'Free software', c1_s: 'AGPL-3.0-compatible license, public repository',
+      c2_b: 'Declared version', c2_s: 'A tested Decidim version range',
+      c3_b: 'No core fork', c3_s: 'Engines, prepend or content blocks',
+      c4_b: 'Documented and tested', c4_s: 'README, CI tests and pt-BR strings',
+      cta_b1: 'Contribute on GitHub', cta_b2: 'Telegram community', cta_b3: 'Meta Decidim BR',
+      foot: 'Content licensed under CC BY-SA 4.0. Decidim is a registered trademark of the Associació de Software Lliure Decidim.',
+      cat: { component: 'Component', extension: 'Extension', channel: 'Channel', admin: 'Administration', identity: 'Identity', platform: 'Infrastructure' },
+      unverified: 'Status not verified', since: 'since', read_pdf: 'Read PDF',
+      prev: 'Previous slide', next: 'Next slide',
+      load_err: 'Could not load the data. If you opened the file from disk, serve the folder over HTTP (python3 -m http.server).'
+    }
+  };
+  const CAT_COLOR = { component: 'var(--blue)', channel: 'var(--blue)', extension: 'var(--green)', admin: 'var(--green)', identity: 'var(--yellow)', platform: 'var(--yellow)' };
+
+  const state = { lang: 'pt', modules: [], instances: [], papers: [] };
+  try { const s = localStorage.getItem('lang'); if (s === 'pt' || s === 'en') state.lang = s; } catch (e) {}
+
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const tr = (v) => (v && typeof v === 'object') ? (v[state.lang] || v.pt || '') : (v || '');
+  const L = () => UI[state.lang];
+
+  function renderStatic() {
+    document.documentElement.lang = state.lang === 'pt' ? 'pt-BR' : 'en';
+    document.querySelectorAll('[data-i18n]').forEach((el) => { const v = L()[el.dataset.i18n]; if (v) el.textContent = v; });
+    document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === state.lang)));
+    $('prev').setAttribute('aria-label', L().prev);
+    $('next').setAttribute('aria-label', L().next);
+  }
+
+  function renderData() {
+    const t = L();
+    const order = { federal: 0, state: 1, municipal: 2, civil: 3 };
+    $('instances').innerHTML = [...state.instances].sort((a, b) => order[a.level] - order[b.level]).map((i) => `
+      <article class="card lv-${esc(i.level)}">
+        <span class="where">${esc(tr(i.place))}${i.since ? ` · ${esc(t.since)} ${esc(i.since)}` : ''}</span>
+        <h3><a href="${esc(i.url)}">${esc(i.name)}</a></h3>
+        <p>${esc(tr(i.summary))}</p>
+        <span class="who">${esc(i.maintainer)}</span>
+        ${i.status === 'unverified' ? `<span class="flag">${esc(t.unverified)}</span>` : ''}
+      </article>`).join('');
+
+    $('modules').innerHTML = state.modules.map((m) => `
+      <article class="card" style="--c:${CAT_COLOR[m.category] || 'var(--line)'}">
+        <span class="cat">${esc(t.cat[m.category] || m.category)}</span>
+        <h3><a href="${esc(m.repo)}">${esc(m.name)}</a></h3>
+        <p>${esc(tr(m.tagline) || tr(m.summary))}</p>
+      </article>`).join('');
+
+    $('papers').innerHTML = state.papers.map((p) => `
+      <article class="paper">
+        <h3>${esc(p.title)}</h3>
+        <p>${esc(tr(p.summary))}</p>
+        <a href="${esc(p.pdf)}">${esc(t.read_pdf)} →</a>
+      </article>`).join('');
+
+    $('n-inst').textContent = state.instances.length;
+    $('n-mod').textContent = state.modules.length;
+    $('n-pap').textContent = state.papers.length;
+  }
+
+  // navegação entre slides
+  const slides = [...document.querySelectorAll('.slide')];
+  let current = 0;
+  function update(i) {
+    current = i;
+    $('counter').textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    $('prev').disabled = i === 0;
+    $('next').disabled = i === slides.length - 1;
+  }
+  function go(i) { const k = Math.max(0, Math.min(slides.length - 1, i)); slides[k].scrollIntoView(); update(k); }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) update(slides.indexOf(e.target)); });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  slides.forEach((s) => io.observe(s));
+  $('prev').addEventListener('click', () => go(current - 1));
+  $('next').addEventListener('click', () => go(current + 1));
+  document.addEventListener('keydown', (e) => {
+    if (e.altKey || e.ctrlKey || e.metaKey || /input|textarea|select/i.test(e.target.tagName)) return;
+    if (['ArrowDown', 'PageDown', 'ArrowRight'].includes(e.key)) { e.preventDefault(); go(current + 1); }
+    else if (['ArrowUp', 'PageUp', 'ArrowLeft'].includes(e.key)) { e.preventDefault(); go(current - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); go(0); }
+    else if (e.key === 'End') { e.preventDefault(); go(slides.length - 1); }
+  });
+
+  document.querySelector('.lang').addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-lang]'); if (!b) return;
+    state.lang = b.dataset.lang;
+    try { localStorage.setItem('lang', state.lang); } catch (err) {}
+    renderStatic(); renderData();
+  });
+
+  renderStatic();
+  update(0);
+  Promise.all(['data/modules.json', 'data/instances.json', 'data/papers.json'].map((u) =>
+    fetch(u).then((r) => { if (!r.ok) throw new Error(u); return r.json(); })
+  )).then(([modules, instances, papers]) => {
+    Object.assign(state, { modules, instances, papers });
+    renderData();
+  }).catch(() => {
+    $('instances').innerHTML = `<p class="notice">${esc(L().load_err)}</p>`;
+  });
+})();
+</script>
+</body>
+</html>
