@@ -5,14 +5,16 @@
     "url": "https://brasilparticipativo.presidencia.gov.br",
     "place": {
       "pt": "Governo federal",
-      "en": "Federal government"
+      "en": "Federal government",
+      "es": "Gobierno federal"
     },
     "level": "federal",
     "status": "active",
     "since": 2023,
     "summary": {
       "pt": "Plataforma federal de participação social da Secretaria-Geral da Presidência. Estreou com o PPA Participativo 2024–2027 e hoje recebe consultas, conferências e planos nacionais.",
-      "en": "The federal public participation platform of the Presidency's General Secretariat. It launched with the 2024–2027 Participatory Multi-Year Plan and now hosts national consultations, conferences and plans."
+      "en": "The federal public participation platform of the Presidency's General Secretariat. It launched with the 2024–2027 Participatory Multi-Year Plan and now hosts national consultations, conferences and plans.",
+      "es": "Plataforma federal de participación social de la Secretaría General de la Presidencia. Se estrenó con el Plan Plurianual Participativo 2024–2027 y hoy acoge consultas, conferencias y planes nacionales."
     },
     "maintainer": "SG/PR · LabLivre/Lappis-UnB · Dataprev",
     "decidim": null,
@@ -29,14 +31,16 @@
     "url": "https://presidencia.participa.gov.br",
     "place": {
       "pt": "Governo federal · serviço para municípios",
-      "en": "Federal government · service for municipalities"
+      "en": "Federal government · service for municipalities",
+      "es": "Gobierno federal · servicio para municipios"
     },
     "level": "federal",
     "status": "active",
     "since": 2026,
     "summary": {
       "pt": "Brasil Participativo 2.0: uma instalação multi-tenant que oferece o Decidim como serviço a órgãos e municípios, com login gov.br e gestão descentralizada.",
-      "en": "Brasil Participativo 2.0: a multi-tenant installation offering Decidim as a service to agencies and municipalities, with gov.br login and decentralized management."
+      "en": "Brasil Participativo 2.0: a multi-tenant installation offering Decidim as a service to agencies and municipalities, with gov.br login and decentralized management.",
+      "es": "Brasil Participativo 2.0: una instalación multi-tenant que ofrece Decidim como servicio a organismos y municipios, con inicio de sesión gov.br y gestión descentralizada."
     },
     "maintainer": "LabLivre/Lappis-UnB · SG/PR",
     "decidim": "0.32.1",
@@ -54,14 +58,16 @@
     "url": "https://decide.belem.pa.gov.br",
     "place": {
       "pt": "Belém · PA",
-      "en": "Belém · PA"
+      "en": "Belém · PA",
+      "es": "Belém · PA"
     },
     "level": "municipal",
     "status": "unverified",
     "since": null,
     "summary": {
       "pt": "Plataforma de participação permanente da Prefeitura de Belém. Primeira experiência de Decidim em governo no Brasil, que embasou a escolha do Decidim para o Brasil Participativo.",
-      "en": "Belém City Hall's permanent participation platform. Brazil's first government Decidim deployment, which informed the choice of Decidim for Brasil Participativo."
+      "en": "Belém City Hall's permanent participation platform. Brazil's first government Decidim deployment, which informed the choice of Decidim for Brasil Participativo.",
+      "es": "Plataforma de participación permanente del Ayuntamiento de Belém. Primera experiencia de Decidim en un gobierno de Brasil, que fundamentó la elección de Decidim para Brasil Participativo."
     },
     "maintainer": "Prefeitura de Belém · Cinbesa · Nômade Tecnologias",
     "decidim": null,
@@ -78,14 +84,16 @@
     "url": "https://decidim.contagem.mg.gov.br",
     "place": {
       "pt": "Contagem · MG",
-      "en": "Contagem · MG"
+      "en": "Contagem · MG",
+      "es": "Contagem · MG"
     },
     "level": "municipal",
     "status": "active",
     "since": 2022,
     "summary": {
       "pt": "Plataforma do Sistema Municipal de Participação Popular e Cidadã, prevista em lei municipal. Recebe a consulta do PPA 2026–2029 do município.",
-      "en": "Platform for the city's Municipal Popular Participation System, established by municipal law. It hosts the city's 2026–2029 Multi-Year Plan consultation."
+      "en": "Platform for the city's Municipal Popular Participation System, established by municipal law. It hosts the city's 2026–2029 Multi-Year Plan consultation.",
+      "es": "Plataforma del Sistema Municipal de Participación Popular y Ciudadana, previsto en ley municipal. Acoge la consulta del Plan Plurianual 2026–2029 del municipio."
     },
     "maintainer": "Prefeitura de Contagem (SEGOV) · implantação com FGV-CDGP",
     "decidim": null,
@@ -102,14 +110,16 @@
     "url": "https://participa.ufpr.br",
     "place": {
       "pt": "Universidade Federal do Paraná · Curitiba",
-      "en": "Federal University of Paraná · Curitiba"
+      "en": "Federal University of Paraná · Curitiba",
+      "es": "Universidad Federal de Paraná · Curitiba"
     },
     "level": "academic",
     "status": "active",
     "since": 2025,
     "summary": {
       "pt": "Participação da comunidade universitária nas decisões da UFPR: propostas, consultas, orçamento estudantil participativo e construção coletiva de regimentos e resoluções.",
-      "en": "University community participation in UFPR decisions: proposals, consultations, a participatory student budget and collaborative drafting of bylaws and resolutions."
+      "en": "University community participation in UFPR decisions: proposals, consultations, a participatory student budget and collaborative drafting of bylaws and resolutions.",
+      "es": "Participación de la comunidad universitaria en las decisiones de la UFPR: propuestas, consultas, presupuesto estudiantil participativo y elaboración colectiva de reglamentos y resoluciones."
     },
     "maintainer": "UFPR · AGTIC (Agência de Tecnologia da Informação e Comunicação)",
     "decidim": null,
@@ -126,14 +136,16 @@
     "url": "https://plantaformas.org",
     "place": {
       "pt": "Amazônia Legal",
-      "en": "Legal Amazon"
+      "en": "Legal Amazon",
+      "es": "Amazonía Legal"
     },
     "level": "civil",
     "status": "active",
     "since": null,
     "summary": {
       "pt": "Movimento de participação popular sobre clima, cultura digital e territórios amazônicos. Organiza conferências, encontros presenciais e propostas para políticas públicas.",
-      "en": "A grassroots participation movement on climate, digital culture and Amazonian territories. It runs conferences, in-person gatherings and public policy proposals."
+      "en": "A grassroots participation movement on climate, digital culture and Amazonian territories. It runs conferences, in-person gatherings and public policy proposals.",
+      "es": "Movimiento de participación popular sobre clima, cultura digital y territorios amazónicos. Organiza conferencias, encuentros presenciales y propuestas de políticas públicas."
     },
     "maintainer": "Cosmotécnicas Amazônicas · Nômade Tecnologias · apoio Hivos",
     "decidim": null,
@@ -150,14 +162,16 @@
     "url": "https://decide.cosmo.tec.br",
     "place": {
       "pt": "Amazônia",
-      "en": "Amazon"
+      "en": "Amazon",
+      "es": "Amazonía"
     },
     "level": "civil",
     "status": "unverified",
     "since": null,
     "summary": {
       "pt": "Plataforma participativa de comunidades amazônicas, com assembleias, encontros e propostas.",
-      "en": "A participatory platform for Amazonian communities, with assemblies, meetings and proposals."
+      "en": "A participatory platform for Amazonian communities, with assemblies, meetings and proposals.",
+      "es": "Plataforma participativa de comunidades amazónicas, con asambleas, encuentros y propuestas."
     },
     "maintainer": "Cosmotécnicas Amazônicas",
     "decidim": null,
@@ -173,14 +187,16 @@
     "url": "https://minutas.ok.org.br",
     "place": {
       "pt": "Nacional",
-      "en": "Nationwide"
+      "en": "Nationwide",
+      "es": "Nacional"
     },
     "level": "civil",
     "status": "active",
     "since": null,
     "summary": {
       "pt": "Espaço de encontros, debates e propostas colaborativas mantido pela Open Knowledge Brasil.",
-      "en": "A space for meetings, debates and collaborative proposals run by Open Knowledge Brasil."
+      "en": "A space for meetings, debates and collaborative proposals run by Open Knowledge Brasil.",
+      "es": "Espacio de encuentros, debates y propuestas colaborativas mantenido por Open Knowledge Brasil."
     },
     "maintainer": "Open Knowledge Brasil",
     "decidim": null,

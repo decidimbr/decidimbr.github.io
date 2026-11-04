@@ -5,28 +5,34 @@
     "category": "identity",
     "tagline": {
       "pt": "Login gov.br e identidade visual por organização",
-      "en": "gov.br login and per-organization branding"
+      "en": "gov.br login and per-organization branding",
+      "es": "Inicio de sesión gov.br e identidad visual por organización"
     },
     "summary": {
       "pt": "Engine de customizações brasileiras: autorização gov.br, identidade visual configurável por organização e blocos de conteúdo da página inicial.",
-      "en": "Engine with Brazilian customizations: gov.br authorization, per-organization visual identity and homepage content blocks."
+      "en": "Engine with Brazilian customizations: gov.br authorization, per-organization visual identity and homepage content blocks.",
+      "es": "Engine de personalizaciones brasileñas: autorización gov.br, identidad visual configurable por organización y bloques de contenido de la página de inicio."
     },
     "features": [
       {
         "pt": "Handler de autorização gov.br e views de verificação",
-        "en": "gov.br authorization handler and verification views"
+        "en": "gov.br authorization handler and verification views",
+        "es": "Handler de autorización gov.br y vistas de verificación"
       },
       {
         "pt": "Blocos de home: notícias, eventos em destaque",
-        "en": "Homepage blocks: news, highlighted meetings"
+        "en": "Homepage blocks: news, highlighted meetings",
+        "es": "Bloques de la página de inicio: noticias, encuentros destacados"
       },
       {
         "pt": "Extensões do admin: cores da organização, taxonomias, dashboard",
-        "en": "Admin extensions: organization colors, taxonomies, dashboard"
+        "en": "Admin extensions: organization colors, taxonomies, dashboard",
+        "es": "Extensiones del panel de administración: colores de la organización, taxonomías, panel de control"
       },
       {
         "pt": "Extensão da criação de organizações no System",
-        "en": "System organization-creation extension"
+        "en": "System organization-creation extension",
+        "es": "Extensión de la creación de organizaciones en System"
       }
     ],
     "decidim": "= 0.32.1",
@@ -51,11 +57,13 @@
     "category": "identity",
     "tagline": {
       "pt": "Login único gov.br para qualquer app Rails",
-      "en": "gov.br single sign-on for any Rails app"
+      "en": "gov.br single sign-on for any Rails app",
+      "es": "Inicio de sesión único gov.br para cualquier aplicación Rails"
     },
     "summary": {
       "pt": "Estratégia OmniAuth OAuth2 para o login único gov.br. Pode ser usada por qualquer aplicação Rails, não só pelo Decidim.",
-      "en": "OmniAuth OAuth2 strategy for gov.br single sign-on. Usable by any Rails app, not only Decidim."
+      "en": "OmniAuth OAuth2 strategy for gov.br single sign-on. Usable by any Rails app, not only Decidim.",
+      "es": "Estrategia OmniAuth OAuth2 para el inicio de sesión único gov.br. Puede usarla cualquier aplicación Rails, no solo Decidim."
     },
     "features": [],
     "decidim": null,
@@ -80,20 +88,24 @@
     "category": "platform",
     "tagline": {
       "pt": "Uma instalação, muitas organizações",
-      "en": "One installation, many organizations"
+      "en": "One installation, many organizations",
+      "es": "Una instalación, muchas organizaciones"
     },
     "summary": {
       "pt": "Multi-tenancy para o Decidim com ros-apartment: cada organização em um schema PostgreSQL próprio, base para operar o Decidim como serviço compartilhado.",
-      "en": "Multi-tenancy for Decidim with ros-apartment: each organization in its own PostgreSQL schema, the basis for running Decidim as a shared service."
+      "en": "Multi-tenancy for Decidim with ros-apartment: each organization in its own PostgreSQL schema, the basis for running Decidim as a shared service.",
+      "es": "Multi-tenancy para Decidim con ros-apartment: cada organización en su propio schema de PostgreSQL, base para operar Decidim como servicio compartido."
     },
     "features": [
       {
         "pt": "Isolamento de tenants por schema",
-        "en": "Schema-per-tenant isolation"
+        "en": "Schema-per-tenant isolation",
+        "es": "Aislamiento de tenants por schema"
       },
       {
         "pt": "Configurações padrão para Decidim distribuído",
-        "en": "Default settings for distributed Decidim"
+        "en": "Default settings for distributed Decidim",
+        "es": "Configuración por defecto para Decidim distribuido"
       }
     ],
     "decidim": ">= 0.29",
@@ -119,28 +131,34 @@
     "category": "channel",
     "tagline": {
       "pt": "Consultas públicas pelo WhatsApp",
-      "en": "Public consultations over WhatsApp"
+      "en": "Public consultations over WhatsApp",
+      "es": "Consultas públicas por WhatsApp"
     },
     "summary": {
       "pt": "Chatbot roteirizado que leva consultas públicas ao WhatsApp, com identificação segura do participante e votos consistentes entre web e chat.",
-      "en": "Scripted chatbot that brings public consultations to WhatsApp, with secure participant identification and votes kept consistent between web and chat."
+      "en": "Scripted chatbot that brings public consultations to WhatsApp, with secure participant identification and votes kept consistent between web and chat.",
+      "es": "Chatbot guionizado que lleva las consultas públicas a WhatsApp, con identificación segura del participante y votos coherentes entre la web y el chat."
     },
     "features": [
       {
         "pt": "Roteiros como máquina de estados auditável, publicados pelo admin",
-        "en": "Scripts as an auditable state machine, published by admins"
+        "en": "Scripts as an auditable state machine, published by admins",
+        "es": "Guiones como máquina de estados auditable, publicados por la administración"
       },
       {
         "pt": "Integração com broker de WhatsApp (Serpro): envio, webhook, status de entrega",
-        "en": "WhatsApp broker integration (Serpro): delivery, webhooks, delivery status"
+        "en": "WhatsApp broker integration (Serpro): delivery, webhooks, delivery status",
+        "es": "Integración con broker de WhatsApp (Serpro): envío, webhooks, estado de entrega"
       },
       {
         "pt": "Vínculo do telefone com a conta do participante",
-        "en": "Links the phone number to the participant account"
+        "en": "Links the phone number to the participant account",
+        "es": "Vincula el teléfono con la cuenta del participante"
       },
       {
         "pt": "Simulador de terminal para testar roteiros",
-        "en": "Terminal simulator to test scripts"
+        "en": "Terminal simulator to test scripts",
+        "es": "Simulador de terminal para probar guiones"
       }
     ],
     "decidim": "= 0.32.1",
@@ -165,24 +183,29 @@
     "category": "component",
     "tagline": {
       "pt": "Comentários por parágrafo, 31× mais rápido",
-      "en": "Per-paragraph comments, 31× faster"
+      "en": "Per-paragraph comments, 31× faster",
+      "es": "Comentarios por párrafo, 31× más rápido"
     },
     "summary": {
       "pt": "Componente de textos participativos centrado no parágrafo: comentários por parágrafo em documentos extensos e devolutivas do governo. Reescrito com Hotwire, carrega 31 vezes mais rápido.",
-      "en": "Paragraph-centric participatory texts component: per-paragraph comments on long documents and government responses. Rebuilt with Hotwire, it loads 31 times faster."
+      "en": "Paragraph-centric participatory texts component: per-paragraph comments on long documents and government responses. Rebuilt with Hotwire, it loads 31 times faster.",
+      "es": "Componente de textos participativos centrado en el párrafo: comentarios por párrafo en documentos extensos y respuestas del gobierno. Reescrito con Hotwire, carga 31 veces más rápido."
     },
     "features": [
       {
         "pt": "Edição e manipulação por parágrafo",
-        "en": "Paragraph-level editing"
+        "en": "Paragraph-level editing",
+        "es": "Edición y manipulación por párrafo"
       },
       {
         "pt": "Devolutivas oficiais por trecho",
-        "en": "Official responses per passage"
+        "en": "Official responses per passage",
+        "es": "Respuestas oficiales por fragmento"
       },
       {
         "pt": "API própria",
-        "en": "Own API"
+        "en": "Own API",
+        "es": "API propia"
       }
     ],
     "decidim": ">= 0.32.0, < 0.33",
@@ -207,16 +230,19 @@
     "category": "extension",
     "tagline": {
       "pt": "Comentários de propostas por etapa",
-      "en": "Per-step comments on proposals"
+      "en": "Per-step comments on proposals",
+      "es": "Comentarios de propuestas por fase"
     },
     "summary": {
       "pt": "Ajustes ao componente de propostas aplicados por prepend, sem fork do core.",
-      "en": "Tweaks to the proposals component, applied via prepend without forking core."
+      "en": "Tweaks to the proposals component, applied via prepend without forking core.",
+      "es": "Ajustes al componente de propuestas aplicados mediante prepend, sin fork del core."
     },
     "features": [
       {
         "pt": "Comentários controlados por etapa, em propostas e rascunhos colaborativos",
-        "en": "Per-step comment control on proposals and collaborative drafts"
+        "en": "Per-step comment control on proposals and collaborative drafts",
+        "es": "Comentarios controlados por fase, en propuestas y borradores colaborativos"
       }
     ],
     "decidim": "~> 0.32.1",
@@ -241,24 +267,29 @@
     "category": "extension",
     "tagline": {
       "pt": "Criação, comentários e anexos por etapa",
-      "en": "Per-step creation, comments and attachments"
+      "en": "Per-step creation, comments and attachments",
+      "es": "Creación, comentarios y adjuntos por fase"
     },
     "summary": {
       "pt": "Ajustes ao componente de encontros. Cada funcionalidade fica em um arquivo próprio, com a origem do requisito e se é candidata a upstream.",
-      "en": "Tweaks to the meetings component. Each feature lives in its own file, stating where the requirement came from and whether it is an upstream candidate."
+      "en": "Tweaks to the meetings component. Each feature lives in its own file, stating where the requirement came from and whether it is an upstream candidate.",
+      "es": "Ajustes al componente de encuentros. Cada funcionalidad está en su propio archivo, con el origen del requisito y si es candidata a upstream."
     },
     "features": [
       {
         "pt": "Criação de eventos por participantes controlada por etapa",
-        "en": "Per-step control of participant-created meetings"
+        "en": "Per-step control of participant-created meetings",
+        "es": "Creación de encuentros por participantes controlada por fase"
       },
       {
         "pt": "Comentários controlados por etapa",
-        "en": "Per-step comment control"
+        "en": "Per-step comment control",
+        "es": "Comentarios controlados por fase"
       },
       {
         "pt": "Anexos por etapa, com upload pelo cidadão",
-        "en": "Per-step attachments, including citizen uploads"
+        "en": "Per-step attachments, including citizen uploads",
+        "es": "Adjuntos por fase, con subida de archivos por parte de la ciudadanía"
       }
     ],
     "decidim": "~> 0.32.1",
@@ -283,24 +314,29 @@
     "category": "extension",
     "tagline": {
       "pt": "Respostas oficiais e moderação",
-      "en": "Official responses and moderation"
+      "en": "Official responses and moderation",
+      "es": "Respuestas oficiales y moderación"
     },
     "summary": {
       "pt": "Regras de comentários para consultas governamentais: respostas oficiais, janela de edição e moderação.",
-      "en": "Comment rules for government consultations: official responses, edit window and moderation."
+      "en": "Comment rules for government consultations: official responses, edit window and moderation.",
+      "es": "Reglas de comentarios para consultas gubernamentales: respuestas oficiales, ventana de edición y moderación."
     },
     "features": [
       {
         "pt": "Só perfis administrativos respondem, com etiqueta \"Resposta Oficial\"",
-        "en": "Only admin profiles reply, tagged \"Official Response\""
+        "en": "Only admin profiles reply, tagged \"Official Response\"",
+        "es": "Solo los perfiles administrativos responden, con la etiqueta \"Respuesta oficial\""
       },
       {
         "pt": "Edição e exclusão pelo autor só nos primeiros 5 minutos",
-        "en": "Authors can edit or delete only within 5 minutes"
+        "en": "Authors can edit or delete only within 5 minutes",
+        "es": "El autor solo puede editar o eliminar en los primeros 5 minutos"
       },
       {
         "pt": "Denúncia restrita a admins e moderadores",
-        "en": "Reporting restricted to admins and moderators"
+        "en": "Reporting restricted to admins and moderators",
+        "es": "Denuncias restringidas a administradores y moderadores"
       }
     ],
     "decidim": "~> 0.32.1",
@@ -325,11 +361,13 @@
     "category": "extension",
     "tagline": {
       "pt": "Extensões dos formulários",
-      "en": "Forms extensions"
+      "en": "Forms extensions",
+      "es": "Extensiones de los formularios"
     },
     "summary": {
       "pt": "Overrides e extensões do motor de formulários (decidim-forms), usado por pesquisas, encontros e outros componentes.",
-      "en": "Overrides and extensions for the forms engine (decidim-forms), used by surveys, meetings and other components."
+      "en": "Overrides and extensions for the forms engine (decidim-forms), used by surveys, meetings and other components.",
+      "es": "Overrides y extensiones del motor de formularios (decidim-forms), usado por encuestas, encuentros y otros componentes."
     },
     "features": [],
     "decidim": "~> 0.32.1",
@@ -352,24 +390,29 @@
     "category": "extension",
     "tagline": {
       "pt": "Blocos de home melhores, sem substituir o core",
-      "en": "Better homepage blocks without replacing core"
+      "en": "Better homepage blocks without replacing core",
+      "es": "Mejores bloques de página de inicio, sin sustituir el core"
     },
     "summary": {
       "pt": "Melhorias opt-in nos blocos de conteúdo das páginas iniciais. Estende os blocos do core em vez de substituí-los, com padrão no comportamento original.",
-      "en": "Opt-in improvements to homepage content blocks. Extends core blocks instead of replacing them, defaulting to the original behavior."
+      "en": "Opt-in improvements to homepage content blocks. Extends core blocks instead of replacing them, defaulting to the original behavior.",
+      "es": "Mejoras opcionales en los bloques de contenido de las páginas de inicio. Extiende los bloques del core en lugar de sustituirlos, con el comportamiento original por defecto."
     },
     "features": [
       {
         "pt": "Linha do tempo de etapas expandida na home do processo",
-        "en": "Expanded step timeline on the process homepage"
+        "en": "Expanded step timeline on the process homepage",
+        "es": "Línea de tiempo de fases expandida en la página de inicio del proceso"
       },
       {
         "pt": "Bloco de destaque usa a imagem do espaço participativo",
-        "en": "Hero block uses the participatory space image"
+        "en": "Hero block uses the participatory space image",
+        "es": "El bloque destacado usa la imagen del espacio participativo"
       },
       {
         "pt": "Títulos configuráveis em blocos como estatísticas",
-        "en": "Configurable titles on blocks such as statistics"
+        "en": "Configurable titles on blocks such as statistics",
+        "es": "Títulos configurables en bloques como estadísticas"
       }
     ],
     "decidim": "~> 0.32.1",
@@ -392,20 +435,24 @@
     "category": "admin",
     "tagline": {
       "pt": "Categorias hierárquicas obrigatórias",
-      "en": "Required hierarchical categories"
+      "en": "Required hierarchical categories",
+      "es": "Categorías jerárquicas obligatorias"
     },
     "summary": {
       "pt": "Categorias hierárquicas por espaço participativo, obrigatórias em propostas e encontros.",
-      "en": "Hierarchical categories per participatory space, required on proposals and meetings."
+      "en": "Hierarchical categories per participatory space, required on proposals and meetings.",
+      "es": "Categorías jerárquicas por espacio participativo, obligatorias en propuestas y encuentros."
     },
     "features": [
       {
         "pt": "Subcategorias ilimitadas, com exclusão lógica",
-        "en": "Unlimited subcategories with soft delete"
+        "en": "Unlimited subcategories with soft delete",
+        "es": "Subcategorías ilimitadas, con borrado lógico"
       },
       {
         "pt": "Seleção só de nível folha, exclusiva dentro do mesmo grupo",
-        "en": "Leaf-only selection, mutually exclusive within a group"
+        "en": "Leaf-only selection, mutually exclusive within a group",
+        "es": "Selección solo de nivel hoja, exclusiva dentro del mismo grupo"
       }
     ],
     "decidim": "= 0.32.1",
@@ -428,20 +475,24 @@
     "category": "admin",
     "tagline": {
       "pt": "Admin por órgão e setor",
-      "en": "Admin by agency and sector"
+      "en": "Admin by agency and sector",
+      "es": "Administración por organismo y sector"
     },
     "summary": {
       "pt": "Administração descentralizada por hierarquia de governo (Órgão e Setor). Admins com escopo gerenciam só os seus processos, sem poder de admin geral.",
-      "en": "Decentralized administration along the government hierarchy (Agency and Sector). Scoped admins manage only their own processes, without full admin rights."
+      "en": "Decentralized administration along the government hierarchy (Agency and Sector). Scoped admins manage only their own processes, without full admin rights.",
+      "es": "Administración descentralizada según la jerarquía de gobierno (Organismo y Sector). Los administradores con ámbito gestionan solo sus propios procesos, sin permisos de administración general."
     },
     "features": [
       {
         "pt": "Acesso calculado das filiações; revogar a filiação revoga o acesso",
-        "en": "Access computed from memberships; revoking a membership revokes access"
+        "en": "Access computed from memberships; revoking a membership revokes access",
+        "es": "Acceso calculado a partir de las afiliaciones; revocar la afiliación revoca el acceso"
       },
       {
         "pt": "Admins com escopo podem tudo, exceto excluir",
-        "en": "Scoped admins can do everything except delete"
+        "en": "Scoped admins can do everything except delete",
+        "es": "Los administradores con ámbito pueden hacerlo todo, excepto eliminar"
       }
     ],
     "decidim": "= 0.32.1",

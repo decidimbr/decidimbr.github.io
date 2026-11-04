@@ -4,7 +4,8 @@
     "title": "Brasil Participativo 2.0 as a Decidim SaaS: An Ecosystem of Fork-Free Modules",
     "summary": {
       "pt": "Apresenta a arquitetura do Brasil Participativo 2.0 como serviço compartilhado para municípios, baseado no Decidim, com módulos livres, login Gov.br e gestão descentralizada, sem modificar o código original.",
-      "en": "Presents the architecture of Brasil Participativo 2.0 as a shared Decidim-based service for municipalities, with free modules, gov.br login and decentralized management, without modifying the original code."
+      "en": "Presents the architecture of Brasil Participativo 2.0 as a shared Decidim-based service for municipalities, with free modules, gov.br login and decentralized management, without modifying the original code.",
+      "es": "Presenta la arquitectura de Brasil Participativo 2.0 como servicio compartido para municipios, basado en Decidim, con módulos libres, inicio de sesión gov.br y gestión descentralizada, sin modificar el código original."
     },
     "pdf": "https://lablivre.unb.br/assets/pdfs/pesquisas/artigo-brasil-participativo-saas-rev.docx.pdf",
     "source": "https://lablivre.unb.br/pesquisas/"
@@ -14,7 +15,8 @@
     "title": "The State Machine Is the Policy: A Scripted Chatbot for Federal Consultations over WhatsApp",
     "summary": {
       "pt": "Descreve um chatbot de consultas públicas pelo WhatsApp, integrado ao Decidim, que permite votar com identificação segura. Fluxos roteirizados e auditáveis garantem consistência entre os votos na web e no chat.",
-      "en": "Describes a WhatsApp chatbot for public consultations, integrated with Decidim, that allows voting with secure identification. Scripted, auditable flows keep web and chat votes consistent."
+      "en": "Describes a WhatsApp chatbot for public consultations, integrated with Decidim, that allows voting with secure identification. Scripted, auditable flows keep web and chat votes consistent.",
+      "es": "Describe un chatbot de consultas públicas por WhatsApp, integrado con Decidim, que permite votar con identificación segura. Flujos guionizados y auditables garantizan la coherencia entre los votos en la web y en el chat."
     },
     "pdf": "https://lablivre.unb.br/assets/pdfs/pesquisas/artigo-chatbot-whatsapp-rev.docx.pdf",
     "source": "https://lablivre.unb.br/pesquisas/"
@@ -24,7 +26,8 @@
     "title": "Participatory Texts for Millions: A Paragraph-Centric Decidim Module Born from Production Outages",
     "summary": {
       "pt": "Apresenta um novo módulo de textos participativos do Decidim que permite comentar documentos extensos por parágrafo, com devolutivas do governo. A reformulação melhorou em 31 vezes o tempo de carregamento.",
-      "en": "Presents a new Decidim participatory texts module for commenting on long documents paragraph by paragraph, with government responses. The redesign made loading 31 times faster."
+      "en": "Presents a new Decidim participatory texts module for commenting on long documents paragraph by paragraph, with government responses. The redesign made loading 31 times faster.",
+      "es": "Presenta un nuevo módulo de textos participativos de Decidim que permite comentar documentos extensos por párrafo, con respuestas del gobierno. El rediseño hizo la carga 31 veces más rápida."
     },
     "pdf": "https://lablivre.unb.br/assets/pdfs/pesquisas/artigo-textos-participativos-v2-rev.docx.pdf",
     "source": "https://lablivre.unb.br/pesquisas/"

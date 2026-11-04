@@ -177,9 +177,10 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 700; line-height: 1.06; m
     <svg viewBox="60 60 290 250" aria-hidden="true"><path d="M128 125h11a8 8 0 0 1 8 8v159a8 8 0 0 1-8 8h-11a62 62 0 0 1-62-62v-51a62 62 0 0 1 62-62z" fill="var(--green)"/><rect x="160" y="70" width="80" height="230" rx="8" fill="var(--yellow)"/><circle cx="304" cy="262" r="41" fill="var(--blue)"/></svg>
     <span>Decidim Brasil</span>
   </a>
-  <div class="lang" role="group" aria-label="Idioma / Language">
+  <div class="lang" role="group" aria-label="Idioma / Language / Idioma">
     <button type="button" data-lang="pt" aria-pressed="true">PT</button>
     <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    <button type="button" data-lang="es" aria-pressed="false">ES</button>
   </div>
 </header>
 
@@ -395,12 +396,51 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 700; line-height: 1.06; m
       unverified: 'Status not verified', since: 'since', read_pdf: 'Read PDF',
       prev: 'Previous slide', next: 'Next slide',
       load_err: 'Could not load the data. If you opened the file from disk, serve the folder over HTTP (python3 -m http.server).'
+    },
+    es: {
+      cover_lead: 'El ecosistema brasileño de Decidim en un solo lugar: quién lo usa, quién lo mantiene y qué se ha construido.',
+      cover_p1: 'Capítulo Brasil · en formación', cover_hint: 'Desplázate o usa las flechas del teclado ↓',
+      ctx_k: 'El panorama', ctx_h: 'Brasil ya usa Decidim desde el gobierno federal hasta los movimientos sociales. Faltaba un mapa.',
+      ctx_s1: 'implantaciones mapeadas', ctx_s2: 'módulos libres para la 0.32', ctx_s3: 'artículos de investigación', ctx_s4: 'año de creación de Decidim, en Barcelona',
+      ctx_lead: 'Ayuntamientos, organismos federales, universidades y colectivos resuelven problemas parecidos, cada uno por su lado. Un directorio común evita duplicar trabajo y muestra al mundo lo que Brasil ya hace.',
+      ch_k: 'El modelo', ch_h: 'Un capítulo local, como el de Suiza',
+      ch_lead: 'En junio de 2026, Suiza creó en Berna el primer capítulo local de la Asociación Decidim, reuniendo ciudades, cantones, proveedores e investigadores. Brasil puede ser el siguiente.',
+      ch_r1: 'Nace el capítulo suizo', ch_r2: 'Propuesta en Metadecidim',
+      ch_1: 'Coordinar la cofinanciación de módulos entre gobiernos y sociedad civil',
+      ch_2: 'Sumar organizaciones brasileñas a la Asociación Decidim',
+      ch_3: 'Formar y apoyar a quienes administran plataformas',
+      ch_4: 'Encargarse de las traducciones al pt-BR y la documentación',
+      ch_5: 'Reunir las necesidades de adaptación al contexto brasileño',
+      ch_6: 'Promover encuentros, hackatones y talleres',
+      in_k: 'Quién lo usa', in_h: 'Implantaciones y quién las mantiene',
+      lv_federal: 'Federal', lv_municipal: 'Municipal', lv_academic: 'Universidad', lv_civil: 'Sociedad civil',
+      mo_k: 'Lo que se ha construido', mo_h: 'Módulos libres para Decidim 0.32',
+      ar_k: 'Cómo', ar_h: 'Sin fork: el core queda intacto, Brasil construye encima',
+      ar_l3b: 'Implantaciones', ar_l3s: 'Gobierno federal, municipios y sociedad civil eligen los módulos que necesitan',
+      ar_l2b: 'Módulos brasileños', ar_l2s: 'Engines y extensiones mediante prepend, to_prepare y content blocks',
+      ar_l1b: 'Decidim core', ar_l1s: '0.32.x, mantenido por la Asociación Decidim, sin modificaciones',
+      ar_p1b: 'Actualizar sin dolor', ar_p1s: 'Seguir las versiones de Decidim sin volver a aplicar parches.',
+      ar_p2b: 'Reutilizar', ar_p2s: 'Cada módulo sirve a cualquier instancia, no solo a la que lo creó.',
+      ar_p3b: 'Devolver al upstream', ar_p3s: 'Las funcionalidades generales se marcan como candidatas al core.',
+      pa_k: 'Evidencia', pa_h: 'Investigación aplicada, publicada', pa_more: 'Todas las investigaciones del LabLivre (UnB)',
+      cta_k: 'Próximo paso', cta_h: 'Pon tu implantación o módulo en el mapa',
+      c1_b: 'Software libre', c1_s: 'Licencia compatible con la AGPL-3.0, repositorio público',
+      c2_b: 'Versión declarada', c2_s: 'Rango de versiones de Decidim probado',
+      c3_b: 'Sin fork del core', c3_s: 'Engines, prepend o content blocks',
+      c4_b: 'Documentado y probado', c4_s: 'README, pruebas en CI y textos en pt-BR',
+      cta_b1: 'Contribuir en GitHub', cta_b2: 'Comunidad en Telegram', cta_b3: 'Meta Decidim BR',
+      foot: 'Contenido bajo licencia CC BY-SA 4.0. Decidim es una marca registrada de la Associació de Software Lliure Decidim.',
+      cat: { component: 'Componente', extension: 'Extensión', channel: 'Canal', admin: 'Administración', identity: 'Identidad', platform: 'Infraestructura' },
+      unverified: 'Estado no verificado', since: 'desde', read_pdf: 'Leer PDF',
+      prev: 'Diapositiva anterior', next: 'Siguiente diapositiva',
+      load_err: 'No se pudieron cargar los datos. Si has abierto el archivo desde el disco, sirve la carpeta por HTTP (python3 -m http.server).'
     }
   };
+  const HTML_LANG = { pt: 'pt-BR', en: 'en', es: 'es' };
   const CAT_COLOR = { component: 'var(--blue)', channel: 'var(--blue)', extension: 'var(--green)', admin: 'var(--green)', identity: 'var(--yellow)', platform: 'var(--yellow)' };
 
   const state = { lang: 'pt', modules: [], instances: [], papers: [] };
-  try { const s = localStorage.getItem('lang'); if (s === 'pt' || s === 'en') state.lang = s; } catch (e) {}
+  try { const s = localStorage.getItem('lang'); if (UI[s]) state.lang = s; } catch (e) {}
 
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -408,7 +448,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 700; line-height: 1.06; m
   const L = () => UI[state.lang];
 
   function renderStatic() {
-    document.documentElement.lang = state.lang === 'pt' ? 'pt-BR' : 'en';
+    document.documentElement.lang = HTML_LANG[state.lang];
     document.querySelectorAll('[data-i18n]').forEach((el) => { const v = L()[el.dataset.i18n]; if (v) el.textContent = v; });
     document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === state.lang)));
     $('prev').setAttribute('aria-label', L().prev);

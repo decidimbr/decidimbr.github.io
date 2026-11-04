@@ -19,7 +19,7 @@ Qualquer órgão, município, empresa ou grupo de pesquisa pode incluir um módu
 | `data/instances.json` | Implantações do Decidim no Brasil |
 | `data/papers.json` | Artigos e pesquisas |
 
-Textos visíveis ao público têm versão em português e inglês: `{ "pt": "…", "en": "…" }`.
+Textos visíveis ao público têm versão em português, inglês e espanhol: `{ "pt": "…", "en": "…", "es": "…" }`. Se faltar o espanhol, a página usa o português.
 
 ### Campos de um módulo
 
@@ -28,9 +28,9 @@ Textos visíveis ao público têm versão em português e inglês: `{ "pt": "…
 | `id` | sim | Identificador único, normalmente o nome da gem |
 | `name` | sim | Nome exibido |
 | `category` | sim | `component`, `extension`, `channel`, `admin`, `identity` ou `platform` |
-| `tagline` | sim | Frase de até ~6 palavras exibida no cartão `{ pt, en }` |
-| `summary` | sim | Descrição curta `{ pt, en }` |
-| `features` | não | Lista de funcionalidades `[{ pt, en }]` |
+| `tagline` | sim | Frase de até ~6 palavras exibida no cartão `{ pt, en, es }` |
+| `summary` | sim | Descrição curta `{ pt, en, es }` |
+| `features` | não | Lista de funcionalidades `[{ pt, en, es }]` |
 | `decidim` | sim | Restrição de versão do Decidim, como no gemspec (`~> 0.32.1`) |
 | `version` | não | Versão da gem |
 | `license` | sim | Identificador SPDX |
@@ -48,11 +48,11 @@ Textos visíveis ao público têm versão em português e inglês: `{ "pt": "…
 | Campo | Obrigatório | Descrição |
 | --- | --- | --- |
 | `id`, `name`, `url` | sim | Identificador, nome e endereço da plataforma |
-| `place` | sim | Território `{ pt, en }`, como `Belém · PA` |
+| `place` | sim | Território `{ pt, en, es }`, como `Belém · PA` |
 | `level` | sim | `federal`, `state`, `municipal`, `academic` ou `civil` |
 | `status` | sim | `active` ou `unverified` |
 | `since` | não | Ano de lançamento |
-| `summary` | sim | Descrição curta `{ pt, en }` |
+| `summary` | sim | Descrição curta `{ pt, en, es }` |
 | `maintainer` | sim | Quem opera e quem dá suporte técnico |
 | `decidim`, `repo` | não | Versão do Decidim e repositório, se públicos |
 | `sources` | sim | Links públicos que comprovam as informações |
